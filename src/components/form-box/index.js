@@ -4,19 +4,34 @@ import "./form-box.css";
 
 export default function FormBox() {
   const [answers, setAnswers] = useState({
-    state: null,
+    state: "Rio grande do Sul",
     haveInternet: null,
     device: null,
+    avaliableTime: "",
     language: null,
-    name: null,
-    email: null,
-    phone: null,
+    name: "",
+    email: "",
+    phone: "",
   });
 
   useEffect(() => {}, [answers]);
 
   function onSelect(questionProperty, answer) {
     setAnswers({ ...answers, [questionProperty]: answer });
+  }
+
+  function onSumit() {
+    if (answersIsValid()) {
+      return alert("Enviado com sucesso!");
+    }
+    alert("Revise suas respostas! Algo esta errado!");
+  }
+
+  function answersIsValid() {
+    for (const property in answers) {
+      if (!answers[property]) return false;
+    }
+    return true;
   }
 
   return (
@@ -31,12 +46,15 @@ export default function FormBox() {
       </div>
 
       <p className="Strong-Text">Selecione seu estado</p>
-      <select className="input cursor-pointer">
-        <option value="Option 1">Rio Grande do Sul</option>
-        <option value="Option 2">Santa Catarina</option>
-        <option value="Option 3">Paraná</option>
-        <option value="Option 4">São Paulo</option>
-        <option value="Option 5">Rio de Janeiro</option>
+      <select
+        onInput={(e) => onSelect("state", e.target.value)}
+        className="input cursor-pointer"
+      >
+        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+        <option value="Santa Catarina">Santa Catarina</option>
+        <option value="Parané">Paraná</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Rio de Janeiro">Rio de Janeiro</option>
       </select>
 
       <p className="Strong-Text">Você possui conexão com a internet?</p>
@@ -47,38 +65,120 @@ export default function FormBox() {
       >
         Sim
       </SelectBox>
-      <SelectBox>Não</SelectBox>
+      <SelectBox
+        questionProperty={"haveInternet"}
+        onSelect={onSelect}
+        selected={answers.haveInternet}
+      >
+        Não
+      </SelectBox>
 
       <p className="Strong-Text">
         Você possui algum celular smartphone, tablet, computador ou notebook?
       </p>
-      <SelectBox>Celular smartphone (android ou iphone)</SelectBox>
-      <SelectBox>Tablet</SelectBox>
-      <SelectBox>Computador</SelectBox>
-      <SelectBox>Netbook</SelectBox>
+      <SelectBox
+        questionProperty={"device"}
+        onSelect={onSelect}
+        selected={answers.device}
+      >
+        Celular smartphone (android ou iphone)
+      </SelectBox>
+      <SelectBox
+        questionProperty={"device"}
+        onSelect={onSelect}
+        selected={answers.device}
+      >
+        Tablet
+      </SelectBox>
+      <SelectBox
+        questionProperty={"device"}
+        onSelect={onSelect}
+        selected={answers.device}
+      >
+        Computador
+      </SelectBox>
+      <SelectBox
+        questionProperty={"device"}
+        onSelect={onSelect}
+        selected={answers.device}
+      >
+        Netbook
+      </SelectBox>
 
       <p className="Strong-Text">
         Quantas horas por semana você tem disponível?
       </p>
-      <input className="input" />
+      <input
+        className="input"
+        onChange={(e) => onSelect("avaliableTime", e.target.value)}
+        value={answers.avaliableTime}
+      />
 
       <p className="Strong-Text">Qual língua você possui mais facilidade?</p>
-      <SelectBox>Inglês</SelectBox>
-      <SelectBox>Espanhol</SelectBox>
-      <SelectBox>Italiano</SelectBox>
-      <SelectBox>Alemão</SelectBox>
-      <SelectBox>
+      <SelectBox
+        questionProperty={"language"}
+        onSelect={onSelect}
+        selected={answers.language}
+      >
+        Inglês
+      </SelectBox>
+      <SelectBox
+        questionProperty={"language"}
+        onSelect={onSelect}
+        selected={answers.language}
+      >
+        Espanhol
+      </SelectBox>
+      <SelectBox
+        questionProperty={"language"}
+        onSelect={onSelect}
+        selected={answers.language}
+      >
+        Italiano
+      </SelectBox>
+      <SelectBox
+        questionProperty={"language"}
+        onSelect={onSelect}
+        selected={answers.language}
+      >
+        Alemão
+      </SelectBox>
+      <SelectBox
+        questionProperty={"language"}
+        onSelect={onSelect}
+        selected={answers.language}
+      >
         Não sei falar nenhuma outra lingua, teria que utilizar o tradutor 100%
         das vezes
       </SelectBox>
 
       <p className="Text"></p>
 
-      <input className="input" placeholder="Digite seu nome" />
-      <input className="input" placeholder="Digite seu e-mail" />
-      <input className="input" placeholder="Digite seu telefone com DDD" />
+      <br />
+      <br />
 
-      <button className="Button">ENVIAR</button>
+      <input
+        className="input"
+        placeholder="Digite seu nome"
+        onChange={(e) => onSelect("name", e.target.value)}
+        value={answers.name}
+      />
+      <input
+        className="input"
+        placeholder="Digite seu e-mail"
+        onChange={(e) => onSelect("email", e.target.value)}
+        value={answers.email}
+      />
+      <input
+        className="input"
+        placeholder="Digite seu telefone com DDD"
+        onChange={(e) => onSelect("phone", e.target.value)}
+        value={answers.phone}
+      />
+
+      <button onClick={onSumit} className="Button">
+        ENVIAR
+      </button>
     </div>
   );
 }

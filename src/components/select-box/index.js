@@ -13,17 +13,13 @@ export default function SelectBox({
     setIsSelected(selected === children ? true : false);
   }, [selected]);
 
-  console.log(children, selected);
-
   return (
     <div
       className="container"
       onClick={() => onSelect(questionProperty, children)}
     >
       <div className={isSelected ? "toogle-box isSelected" : "toogle-box"} />
-      <p className="text" isSelected>
-        {children}
-      </p>
+      <p className="text">{children}</p>
     </div>
   );
 }
