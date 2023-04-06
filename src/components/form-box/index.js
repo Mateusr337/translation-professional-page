@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SelectBox from "../select-box";
 import "./form-box.css";
 import { isValidAnswers } from "./validations/answers-validations";
