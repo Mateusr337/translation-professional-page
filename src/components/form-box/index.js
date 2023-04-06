@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SelectBox from "../select-box";
 import "./form-box.css";
+import { isValidAnswers } from "./validations/answers-validations";
 
 export default function FormBox() {
   const [answers, setAnswers] = useState({
@@ -21,17 +22,11 @@ export default function FormBox() {
   }
 
   function onSumit() {
-    if (answersIsValid()) {
+    const result = isValidAnswers(answers);
+    if (result === true) {
       return alert("Enviado com sucesso!");
     }
-    alert("Revise suas respostas! Algo esta errado!");
-  }
-
-  function answersIsValid() {
-    for (const property in answers) {
-      if (!answers[property]) return false;
-    }
-    return true;
+    alert(result);
   }
 
   return (

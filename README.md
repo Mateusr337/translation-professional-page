@@ -17,7 +17,7 @@ $ https://github.com/Mateusr337/translation-professional-page
 #### Deploy
 
 ```
-$ Colocar
+$ https://translation-professional-page.vercel.app/
 ```
 
 <br/>
