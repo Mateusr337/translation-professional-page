@@ -1,0 +1,21 @@
+.container {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.toogle-box {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+.box-selected {
+}

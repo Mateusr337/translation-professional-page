@@ -1,0 +1,61 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  font-family: sans-serif;
+  background-image: url("../assets/business-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-app {
+  width: 220px;
+  height: 80px;
+  background-image: url("../assets/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scroll-box {
+  width: 420px;
+  height: 550px;
+  align-items: center;
+  margin-left: 25vw;
+  overflow-y: scroll;
+}
+
+.scroll-box::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
