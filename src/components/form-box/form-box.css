@@ -63,5 +63,10 @@
   font-weight: bold;
   font-size: 14px;
   color: #ffffff;
+  background-color: #17d217;
+}
+
+.Button:hover {
+  cursor: pointer;
   background-color: #00a000;
 }

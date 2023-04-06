@@ -18,7 +18,7 @@
 }
 
 .image {
-  width: 150px;
+  width: 120px;
   background-image: url("../../assets/logo.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -39,4 +39,26 @@
   font-size: 11px;
   font-weight: 900;
   color: #000000;
+}
+
+@media (max-width: 1000px) {
+  .footer-container {
+    justify-content: center;
+  }
+
+  .footer-content {
+    width: 40vw;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    justify-content: center;
+  }
+
+  .footer-content {
+    width: 80vw;
+    margin: 0;
+  }
 }

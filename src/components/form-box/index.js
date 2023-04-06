@@ -112,6 +112,7 @@ export default function FormBox() {
         className="input"
         onChange={(e) => onSelect("avaliableTime", e.target.value)}
         value={answers.avaliableTime}
+        type="number"
       />
 
       <p className="Strong-Text">Qual língua você possui mais facilidade?</p>
@@ -162,18 +163,21 @@ export default function FormBox() {
         placeholder="Digite seu nome"
         onChange={(e) => onSelect("name", e.target.value)}
         value={answers.name}
+        type="text"
       />
       <input
         className="input"
         placeholder="Digite seu e-mail"
         onChange={(e) => onSelect("email", e.target.value)}
         value={answers.email}
+        type="email"
       />
       <input
         className="input"
         placeholder="Digite seu telefone com DDD"
         onChange={(e) => onSelect("phone", e.target.value)}
         value={answers.phone}
+        type="text"
       />
 
       <button onClick={onSumit} className="Button">
