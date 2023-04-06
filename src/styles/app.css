@@ -10,7 +10,7 @@
 
 .image-app {
   width: 230px;
-  height: 25%;
+  height: 150px;
   background-image: url("../assets/logo.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -18,8 +18,8 @@
 }
 
 .content {
-  width: 420px;
-  height: 550px;
+  width: 30vw;
+  height: 85vh;
   margin-left: 25vw;
   align-items: center;
   display: flex;
