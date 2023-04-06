@@ -1,9 +1,16 @@
-.Container {
+.form-container {
+  max-width: 100%;
   background: #ffffff;
-  padding: 20px;
+  padding: 10px 25px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.form-container::-webkit-scrollbar {
+  display: none;
 }
 
 .Strong-Text {
@@ -28,31 +35,29 @@
   text-align: center;
 }
 
-.toogle-list {
-  background-color: transparent;
-  border: none;
+.cursor-pointer {
   cursor: pointer;
-  line-height: inherit;
 }
 
-::placeholder,
-.Input {
-  /* Edge */
+.input::placeholder {
   color: grey;
   font-size: 12px;
   padding-left: 1px;
 }
 
-.Input {
+.input {
   height: 25px;
+  max-height: 25px;
+  padding: 5px;
   margin-bottom: 3px;
   border-radius: 3px;
   border: 1px solid #000000;
-  padding-left: 5px;
   color: #000000;
+  font-size: 12px;
 }
 
 .Button {
+  min-height: 35px;
   height: 35px;
   margin-top: 5px;
   border-radius: 3px;

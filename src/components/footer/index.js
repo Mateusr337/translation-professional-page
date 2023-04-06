@@ -2,7 +2,7 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <div className="footer-container">
       <div className="footer-content">
         <div className="image"></div>
         <div className="links-container">
